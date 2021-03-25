@@ -1,0 +1,7 @@
+# editores
+.idea/
+.vscode/
+
+# cache
+.pytest_cache/
+__pycache__/
