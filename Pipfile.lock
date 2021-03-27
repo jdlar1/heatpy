@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1f0cd11ed3b77d4be4b422da681ab2316fe87f508c7f09d46343902396caf3d8"
+            "sha256": "020844af9f5ffc92e8a104f24d9dbe91778b04a8d8ef36b4a7e411a6f27b5547"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -22,13 +22,6 @@
                 "sha256:cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
             ],
             "version": "==0.10.0"
-        },
-        "gmsh": {
-            "hashes": [
-                "sha256:c2375c36f5771db143da0e992840faf5e913645307bbdf1a210102fd45dca4eb"
-            ],
-            "index": "pypi",
-            "version": "==4.8.1"
         },
         "kiwisolver": {
             "hashes": [
@@ -169,21 +162,6 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==8.1.2"
-        },
-        "pygalmesh": {
-            "hashes": [
-                "sha256:83320bca8e3c32aa380ba172ab35be52f56afb354f07e600d049e91ebd568fd5"
-            ],
-            "index": "pypi",
-            "version": "==0.9.4"
-        },
-        "pygmsh": {
-            "hashes": [
-                "sha256:6cd3832aa407f9fd64b6777019c1073aa2940407275a028707329cdab5e3ef5e",
-                "sha256:8d9a8748715a52caee55fc7b4200d6ec5750cdf079a700824fac9313a07d94ed"
-            ],
-            "index": "pypi",
-            "version": "==7.1.8"
         },
         "pyparsing": {
             "hashes": [

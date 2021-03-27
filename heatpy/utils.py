@@ -30,6 +30,8 @@ def plot_mesh(mesh: meshio._mesh.Mesh, save: bool = False):
     plt.xlabel('x [m]')
     plt.ylabel('y [m]')
 
+    plt.gca().set_aspect('equal', adjustable='box')
+
     if save:
-        plt.savefig('mesh.png')
+        plt.savefig('mesh.png', dpi = 600)
     plt.plot()
