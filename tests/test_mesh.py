@@ -11,6 +11,8 @@ class TestMesh:
     def test_generate_mesh(self):
         heatpy.rec_mesh(0.4, 0.5, filename='test_rectangular.msh')
 
+        heatpy.rec_mesh(0.4, 0.5, filename='mesh_files/test_rectangular.msh')
+
     def test_visualization(self):
         try:
             mesh = meshio.read(
@@ -20,3 +22,4 @@ class TestMesh:
             heatpy.plot_mesh(mesh)
         finally:
             os.remove('test_rectangular.msh')
+            os.remove(os.path.join('mesh_files', 'test_rectangular.msh'))
