@@ -1,4 +1,5 @@
 import os
+import glob
 
 import pytest
 import meshio
@@ -6,20 +7,13 @@ import meshio
 import heatpy
 
 
-class TestMesh:
+class TestMeshes:
 
-    def test_generate_mesh(self):
-        heatpy.rec_mesh(0.4, 0.5, filename='test_rectangular.msh')
+    def test_open_mesh_files(self):
 
-        heatpy.rec_mesh(0.4, 0.5, filename='mesh_files/test_rectangular.msh')
+        files = glob.glob(os.path.join('.', 'mesh_files', '*'))
 
-    def test_visualization(self):
-        try:
-            mesh = meshio.read(
-                os.path.join('test_rectangular.msh')
-            )
+        print(files)
 
-            heatpy.plot_mesh(mesh)
-        finally:
-            os.remove('test_rectangular.msh')
-            os.remove(os.path.join('mesh_files', 'test_rectangular.msh'))
+        for mesh_file in files:
+            meshio.read(mesh_file)

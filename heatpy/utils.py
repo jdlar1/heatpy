@@ -12,9 +12,13 @@ def plot_mesh(mesh: meshio._mesh.Mesh, save: bool = False):
     """
 
     pts = mesh.points
-    quads = mesh.cells[0].data
 
-    for quad in quads[:]:
+    try:
+        quads = mesh.cells[1].data
+    except:
+        quads = mesh.cells[0].data
+
+    for quad in quads:
 
         elms = pts[np.append(quad, quad[0])]
 

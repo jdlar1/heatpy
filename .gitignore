@@ -8,3 +8,5 @@ __pycache__/
 
 # dev-files
 visualize.py
+generate.py
+testing.py
