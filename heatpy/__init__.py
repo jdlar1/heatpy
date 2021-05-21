@@ -1,1 +1,1 @@
-from .utils import plot_mesh
+from .core import Domain

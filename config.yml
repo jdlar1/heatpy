@@ -1,3 +1,4 @@
 # configuración del archivo main.py
 
 meshfile: circle_opt.vtk
+boundary 

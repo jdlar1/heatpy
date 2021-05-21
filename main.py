@@ -3,22 +3,21 @@
 import os
 
 import yaml
-import meshio
 import matplotlib.pyplot as plt
 
-import heatpy
+from heatpy import Domain
 
 
 def main():
     """Función principal del programa"""
 
     config = load_config('config.yml')
+    meshfile = os.path.join('mesh_files', config['meshfile'])
 
-    mesh = meshio.read(
-        os.path.join('mesh_files', config['meshfile'])
-    )
+    tray = Domain(meshfile)
 
-    heatpy.plot_mesh(mesh, save=True)
+    print(tray)
+
 
 
 def load_config(filename: str = 'config.yml'):

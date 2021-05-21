@@ -11,9 +11,11 @@ class TestMeshes:
 
     def test_open_mesh_files(self):
 
-        files = glob.glob(os.path.join('.', 'mesh_files', '*'))
+        meshes = []
+        files = glob.glob(os.path.join('.', 'mesh_files', '*.vtk'))
 
         print(files)
 
         for mesh_file in files:
-            meshio.read(mesh_file)
+            m = meshio.read(mesh_file)
+            meshes.append(m)
