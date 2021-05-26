@@ -1,9 +1,10 @@
 # configuración del archivo main.py
 
-meshfile: rounded_tray_test.vtk
+meshfile: rounded_tray.vtk
+output_dir: outputs
 params:
   alpha: 1.2
-  iterations: 5
+  iterations: 70
   delta_t: 0.01
   init_temp: 30
   bound_temp: 40

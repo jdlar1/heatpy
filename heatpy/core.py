@@ -15,16 +15,16 @@ class Domain:
         self.points = self.mesh.points
         self.quads = self.mesh.cells[1].data
 
-        print('initialize with: ')
-        print(self.quads)
+        self.b_cond = np.array(set(self.mesh.cells[0].data.flatten()))
+        print('Nodos con condición de frontera: ')
+        print(self.b_cond)
 
-        self.b_cond = np.arange(0, 14)
         self.config = {}
 
     def set(self, payload):
         self.config.update(payload)
 
-    def solve(self):
+    def solve(self, output_dir = ''):
 
         E = sym.Symbol('E')
         N = sym.Symbol('N')
@@ -59,7 +59,9 @@ class Domain:
                 dx = ny
 
         # 0.0001 determinacion del dt
-        dt = (dx**2)/(self.config['alpha']*10000)
+        dt = (dx**2)/(self.config['alpha']*1000)
+
+        print(f'Delta time is: {dt}')
 
         for n in range(n_elems):  # n1, n2, n3 y n4 son los nodos que conforman el elemento
 
@@ -148,7 +150,7 @@ class Domain:
                     'points': self.points,
                     'cells':[("triangle", self.quads)]}
 
-                meshio.write_points_cells(f'ecuacioncalor{i}.vtk',
+                meshio.write_points_cells(os.path.join(output_dir,f'solution{i}.vtk'),
                              self.points, [('triangle', self.quads.tolist())] , point_data=point_data)
 
         print(Sol)

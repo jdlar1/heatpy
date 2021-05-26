@@ -17,7 +17,7 @@ def main():
     tray = Domain(meshfile)   # Cargar el archivo y los parámetros necesarios
     tray.set(config['params'])
 
-    tray.solve()
+    tray.solve(config['output_dir'])
 
     print(tray.config)
     
