@@ -1,6 +1,6 @@
 # configuración del archivo main.py
 
-meshfile: rounded_tray.vtk
+meshfile: rounded_tray_opt.vtk
 output_dir: outputs
 params:
   alpha: 1.2

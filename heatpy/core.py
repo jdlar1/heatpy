@@ -13,11 +13,14 @@ class Domain:
         self.mesh = meshio.read(mesh_file)
 
         self.points = self.mesh.points
-        self.quads = self.mesh.cells[1].data
+        self.quads = self.mesh.cells[0].data
 
         self.b_cond = np.array(set(self.mesh.cells[0].data.flatten()))
         print('Nodos con condición de frontera: ')
         print(self.b_cond)
+
+        # condiciones manuales
+        self.b_cond = np.arange(0, 56)
 
         self.config = {}
 
@@ -59,7 +62,7 @@ class Domain:
                 dx = ny
 
         # 0.0001 determinacion del dt
-        dt = (dx**2)/(self.config['alpha']*1000)
+        dt = (dx**2)/(self.config['alpha']*10000)
 
         print(f'Delta time is: {dt}')
 
