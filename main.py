@@ -14,10 +14,13 @@ def main():
     config = load_config('config.yml')
     meshfile = os.path.join('mesh_files', config['meshfile'])
 
-    tray = Domain(meshfile)
+    tray = Domain(meshfile)   # Cargar el archivo y los parámetros necesarios
+    tray.set(config['params'])
 
-    print(tray)
+    tray.solve()
 
+    print(tray.config)
+    
 
 
 def load_config(filename: str = 'config.yml'):

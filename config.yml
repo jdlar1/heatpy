@@ -1,4 +1,9 @@
 # configuración del archivo main.py
 
-meshfile: circle_opt.vtk
-boundary 
+meshfile: rounded_tray_test.vtk
+params:
+  alpha: 1.2
+  iterations: 5
+  delta_t: 0.01
+  init_temp: 30
+  bound_temp: 40
