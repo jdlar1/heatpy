@@ -29,7 +29,7 @@ class Domain:
 
     def solve(self, output_dir = ''):
 
-        E = sym.Symbol('E')  # Código principal, adaptado de Pablo Echeverri et al.
+        E = sym.Symbol('E')  # Código principal, adaptado de Pablo Echeverri et al. EAFIT 2018
         N = sym.Symbol('N')
 
         n_nodes = self.points.shape[0]
