@@ -1,10 +1,9 @@
 # configuración del archivo main.py
 
-meshfile: rounded_tray_opt.vtk
-output_dir: outputs
+meshfile: rectangle_opt.vtk
+output_dir: outputs_rect_glass
 params:
-  alpha: 1.2
-  iterations: 70
-  delta_t: 0.01
-  init_temp: 30
-  bound_temp: 40
+  alpha: 1
+  iterations: 500
+  init_temp: 25
+  bound_temp: 80

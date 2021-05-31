@@ -20,7 +20,7 @@ class Domain:
         print(self.b_cond)
 
         # condiciones manuales
-        self.b_cond = np.arange(0, 56)
+        self.b_cond = np.arange(0, 42)
 
         self.config = {}
 
@@ -29,7 +29,7 @@ class Domain:
 
     def solve(self, output_dir = ''):
 
-        E = sym.Symbol('E')
+        E = sym.Symbol('E')  # Código principal, adaptado de Pablo Echeverri et al.
         N = sym.Symbol('N')
 
         n_nodes = self.points.shape[0]
@@ -62,7 +62,7 @@ class Domain:
                 dx = ny
 
         # 0.0001 determinacion del dt
-        dt = (dx**2)/(self.config['alpha']*10000)
+        dt = (dx**2)/(self.config['alpha']*1000)
 
         print(f'Delta time is: {dt}')
 
@@ -136,7 +136,7 @@ class Domain:
             Mr[self.b_cond[i], :] = 0
             Mr[self.b_cond[i], self.b_cond[i]] = 1
 
-        A = -dt*Kg + Mg  # -
+        A = -dt*Kg + Mg  
         B = dt*Bg
 
         for i in range(self.config['iterations']):
