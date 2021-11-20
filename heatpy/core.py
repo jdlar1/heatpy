@@ -20,7 +20,7 @@ class Domain:
         print(self.b_cond)
 
         # condiciones manuales
-        self.b_cond = np.arange(0, 42)
+        self.b_cond = np.arange(0, 32)
 
         self.config = {}
 

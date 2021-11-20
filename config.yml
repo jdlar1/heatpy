@@ -1,9 +1,9 @@
 # configuración del archivo main.py
 
-meshfile: rectangle_opt.vtk
-output_dir: outputs_rect_glass
+meshfile: circle_opt.vtk
+output_dir: outputs_circle
 params:
-  alpha: 1
-  iterations: 500
+  alpha: 10
+  iterations: 100
   init_temp: 25
   bound_temp: 80
